@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imobiliária Summit</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="../images/LOGO.png" type="image/png">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .required::after {
+            content: "*";
+            color: red;
+        }
+        .form-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .form-box {
+            width: 100%;
+            max-width: 500px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-container h2 {
+            text-align: center;
+        }
+        .form-container .btn-toggle {
+            display: block;
+            margin: 10px auto;
+        }
+        .form-box.hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <a href="../index.html">
+                <img src="../images/LOGO.png" alt="Logo da Imobiliária Summit">
+                <span>Imobiliária Summit</span>
+            </a>
+        </div>
+        <div class="menu">
+            <a href="../index.html" onclick="navigate('home')">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                    <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
+                  </svg>
+                Home</a>
+            <a href="../financiamento/financiamento.html" onclick="navigate('financiamento')" class="finance-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi-currency-dollar" viewBox="0 0 16 16">
+                    <path d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73z"/>
+                </svg>
+                Financiar
+            </a>            
+            <a href="../corretor/seja_corretor.html" onclick="navigate('seja-corretor')">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5m14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5"/>
+                  </svg>
+                Seja Corretor</a>
+            <a href="../cadastro/cadastro.html" onclick="navigate('acessar-conta')">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-workspace" viewBox="0 0 16 16">
+                    <path d="M4 16s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-5.95a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5"/>
+                    <path d="M2 1a2 2 0 0 0-2 2v9.5A1.5 1.5 0 0 0 1.5 14h.653a5.4 5.4 0 0 1 1.066-2H1V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v9h-2.219c.554.654.89 1.373 1.066 2h.653a1.5 1.5 0 0 0 1.5-1.5V3a2 2 0 0 0-2-2z"/>
+                  </svg>
+                Acessar Conta</a>
+                <div class="dropdown">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="menu-icon" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                    </svg>
+                    <div class="dropdown-content">
+                        <a href="../imoveis/compras.html">
+                            <img src="../images/pesquisa.png" width="16" height="16" class="capitalist" alt="Descrição da imagem">
+                            Buscar Imóvel</a>
+                        <a href="../imoveis/vender_imovel.html">
+                            <img src="../images/noun-venture-capitalist-2909304.png" width="16" height="16" class="capitalist" alt="Descrição da imagem">
+                            Vender Meu Imóvel</a>
+                        <a href="../financiamento/financiamento.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi-currency-dollar-menu" viewBox="0 0 16 16">
+                                <path d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73z"/>
+                            </svg>
+                            Financiamento</a>
+                        <a href="../corretor/seja_corretor.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5m14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5"/>
+                              </svg>
+                              Seja Corretor</a>
+                        <a href="../contato/contato.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
+                              </svg>
+                              Fale Conosco
+                        </a>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <div class="form-container">
+        <div id="loginForm" class="form-box">
+            <h2>Login</h2>
+            <form id="loginFormElement">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" class="form-control" id="loginEmail" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Senha</label>
+                    <input type="password" class="form-control" id="loginPassword" placeholder="Senha" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Entrar</button>
+                <button type="button" class="btn btn-secondary btn-toggle" onclick="toggleForm()">Criar Conta</button>
+            </form>
+        </div>
+
+        <div id="cadastroForm" class="form-box hidden">
+            <h2>Cadastro do Usuário</h2>
+            <form id="cadastroFormElement">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputNome4" class="required">Nome</label>
+                        <input type="text" class="form-control" id="inputNome4" placeholder="Nome" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputSobrenome4" class="required">Sobrenome</label>
+                        <input type="text" class="form-control" id="inputSobrenome4" placeholder="Sobrenome" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail4" class="required">Email</label>
+                        <input type="email" class="form-control" id="inputEmail4" placeholder="Email" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputPassword4" class="required">Senha</label>
+                        <input type="password" class="form-control" id="inputPassword4" placeholder="Senha" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputAddress" class="required">Endereço</label>
+                    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" required>
+                </div>
+                <div class="form-group">
+                    <label for="inputAddress2">Complemento</label>
+                    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartamento, estúdio ou andar">
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputCity" class="required">Cidade</label>
+                        <input type="text" class="form-control" id="inputCity" required>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputState" class="required">Estado</label>
+                        <select id="inputState" class="form-control" required>
+                            <option selected>Escolha...</option>
+                            <option>SP</option>
+                            <option>CE</option>
+                            <option>RJ</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="inputZip" class="required">CEP</label>
+                        <input type="text" class="form-control" id="inputZip" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck" required>
+                        <label class="form-check-label" for="gridCheck">
+                            Aceito os termos
+                        </label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Cadastrar</button>
+                <button type="button" class="btn btn-secondary btn-toggle" onclick="toggleForm()">Já tenho uma conta</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="cadastro.js"></script>
+    <script src="../script.js"></script>
+    <script>
+        function toggleForm() {
+            document.getElementById('loginForm').classList.toggle('hidden');
+            document.getElementById('cadastroForm').classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>

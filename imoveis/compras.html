@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locações - Imobiliária</title>
+    <link rel="stylesheet" href="locacoes.css">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">
+            <a href="../index.html">
+                <img src="../images/LOGO.png" alt="Logo da Imobiliária Summit">
+                <span>Imobiliária Summit</span>
+            </a>
+        </div>
+        <div class="menu">
+            <a href="../index.html" onclick="navigate('home')">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                    <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
+                  </svg>
+                Home</a>
+            <a href="../financiamento/financiamento.html" onclick="navigate('financiamento')" class="finance-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi-currency-dollar" viewBox="0 0 16 16">
+                    <path d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73z"/>
+                </svg>
+                Financiar
+            </a>            
+            <a href="../corretor/seja_corretor.html" onclick="navigate('seja-corretor')">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5m14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5"/>
+                  </svg>
+                Seja Corretor</a>
+            <a href="../cadastro/cadastro.html" onclick="navigate('acessar-conta')">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-workspace" viewBox="0 0 16 16">
+                    <path d="M4 16s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-5.95a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5"/>
+                    <path d="M2 1a2 2 0 0 0-2 2v9.5A1.5 1.5 0 0 0 1.5 14h.653a5.4 5.4 0 0 1 1.066-2H1V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v9h-2.219c.554.654.89 1.373 1.066 2h.653a1.5 1.5 0 0 0 1.5-1.5V3a2 2 0 0 0-2-2z"/>
+                  </svg>
+                Acessar Conta</a>
+                <div class="dropdown">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="menu-icon" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                    </svg>
+                    <div class="dropdown-content">
+                        <a href="../imoveis/compras.html">
+                            <img src="../images/pesquisa.png" width="16" height="16" class="capitalist" alt="Descrição da imagem">
+                            Buscar Imóvel</a>
+                        <a href="../imoveis/vender_imovel.html">
+                            <img src="../images/noun-venture-capitalist-2909304.png" width="16" height="16" class="capitalist" alt="Descrição da imagem">
+                            Vender Meu Imóvel</a>
+                        <a href="../financiamento/financiamento.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi-currency-dollar-menu" viewBox="0 0 16 16">
+                                <path d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73z"/>
+                            </svg>
+                            Financiamento</a>
+                        <a href="../corretor/seja_corretor.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5m14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5"/>
+                              </svg>
+                              Seja Corretor</a>
+                        <a href="../contato/contato.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
+                              </svg>
+                              Fale Conosco
+                        </a>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <div class="locacoes-container">
+        <aside class="filter-menu">
+            <h3>Filtrar por:</h3>
+            <form id="filter-form">
+                <label for="tipo">Tipo de Imóvel:</label>
+                <select id="tipo" name="tipo">
+                    <option value="apartamento">Apartamento</option>
+                    <option value="casa">Casa</option>
+                    <option value="sobrado">Sobrado</option>
+                    <option value="cobertura">Cobertura</option>
+                </select>
+
+                <label for="preco">Faixa de Preço:</label>
+                <select id="preco" name="preco">
+                    <option value="0-1000">Até R$ 1.000</option>
+                    <option value="1000-3000">R$ 1.000 - R$ 3.000</option>
+                    <option value="3000-5000">R$ 3.000 - R$ 5.000</option>
+                    <option value="5000+">Acima de R$ 5.000</option>
+                </select>
+
+                <label for="localizacao">Localização:</label>
+                <select id="localizacao" name="localizacao">
+                    <option value="centro">Centro</option>
+                    <option value="zona-sul">Zona Sul</option>
+                    <option value="zona-norte">Zona Norte</option>
+                    <option value="zona-oeste">Zona Oeste</option>
+                </select>
+
+                <label for="aceita-pet">Aceita Pet:</label>
+                <select id="aceita-pet" name="aceita-pet">
+                    <option value="sim">Sim</option>
+                    <option value="nao">Não</option>
+                </select>
+
+                <label for="garagem">Garagem:</label>
+                <select id="garagem" name="garagem">
+                    <option value="sim">Sim</option>
+                    <option value="nao">Não</option>
+                </select>
+
+                <button type="submit">Aplicar Filtros</button>
+            </form>
+        </aside>
+
+        <main class="property-listing">
+            <h2>Imóveis Disponíveis para Compra</h2>
+            <div class="property-grid" id="property-grid">
+            </div>
+        </main>
+    </div>
+
+    <script src="locacoes.js"></script>
+    <script src="../script.js"></script>
+</body>
+
+</html>
